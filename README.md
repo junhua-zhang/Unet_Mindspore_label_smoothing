@@ -1,3 +1,7 @@
+# Description
+
+The repository is cloned from [Mindspore CV models](https://github.com/mindspore-ai/models/tree/master/official/cv/Unet).
+
 # Contents
 
 - [Contents](#contents)
@@ -376,7 +380,7 @@ step: 3, loss is 0.69189453, fps is 57.3293877244179
 step: 4, loss is 0.6894531, fps is 57.840651522059716
 step: 5, loss is 0.6850586, fps is 57.89903776054361
 step: 6, loss is 0.6777344, fps is 58.08073627299014
-...  
+...
 step: 597, loss is 0.19030762, fps is 58.28088370287449
 step: 598, loss is 0.19958496, fps is 57.95493929352674
 step: 599, loss is 0.18371582, fps is 58.04039977720966
@@ -472,7 +476,7 @@ The above python command will run in the background. You can view the results th
 python export.py --config_path=[CONFIG_PATH] --checkpoint_file_path=[model_ckpt_path] --file_name=[model_name] --file_format=[EXPORT_FORMAT]
 ```
 
-The `checkpoint_file_path` parameter is required,  
+The `checkpoint_file_path` parameter is required,
 `EXPORT_FORMAT` should be in ["AIR", "MINDIR", "ONNX"]. BATCH_SIZE current batch_size can only be set to 1.
 
 #### Export MindIR on Modelarts
@@ -519,7 +523,7 @@ Cross valid dice coeff is: 0.9054352151297033
 
 ### Infer on Onnx
 
-Before performing inference, the onnx file must be exported by export.py script. We only provide an example of inference using ONNX model.  
+Before performing inference, the onnx file must be exported by export.py script. We only provide an example of inference using ONNX model.
 Only ONNX models with batch size of 1 are supported for model inference accuracy verification, so `--batch_size=1` is set in ONNX export.
 
 #### Export on Onnx
@@ -530,16 +534,16 @@ python export.py --config_path=[CONFIG_PATH] --checkpoint_file_path=[model_ckpt_
 
 #### Evaluation on Onnx
 
-Command  
+Command
 
 ```shell
  python infer_unet_onnx.py [CONFIG_PATH] [ONNX_MODEL] [DATASET_PATH] [DEVICE_TARGET]
 ```
 
- `CONFIG_PATH`： is the relative path to the YAML config file.  
- `ONNX_MODEL`：is the relative path to the ONNX file.  
- `DATASET_PATH`：is the relative path to the dataset.  
- `DEVICE_TARGET`：Device name e.g. GPU, Ascend .  
+ `CONFIG_PATH`： is the relative path to the YAML config file.
+ `ONNX_MODEL`：is the relative path to the ONNX file.
+ `DATASET_PATH`：is the relative path to the dataset.
+ `DEVICE_TARGET`：Device name e.g. GPU, Ascend .
 
 Script
 
